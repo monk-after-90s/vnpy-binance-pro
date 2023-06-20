@@ -92,7 +92,7 @@ DIRECTION_VT2BINANCES: Dict[Direction, str] = {
 DIRECTION_BINANCES2VT: Dict[str, Direction] = {v: k for k, v in DIRECTION_VT2BINANCES.items()}
 
 # 数据频率映射
-INTERVAL_VT2BINANCES: Dict[Interval, str] = {
+INTERVAL_VT2BINANCE: Dict[Interval, str] = {
     Interval.MINUTE: "1m",
     Interval.HOUR: "1h",
     Interval.DAILY: "1d",
@@ -676,7 +676,7 @@ class BinanceUsdtRestApi(RestClient):
             # 创建查询参数
             params: dict = {
                 "symbol": req.symbol,
-                "interval": INTERVAL_VT2BINANCES[req.interval],
+                "interval": INTERVAL_VT2BINANCE[req.interval],
                 "limit": limit
             }
 
